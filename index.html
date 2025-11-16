@@ -14,7 +14,19 @@
             color: #ffffff;
             overflow-x: hidden;
         }
-        .orbitron {
+        body {
+  font-family: 'Outfit', sans-serif;
+}
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+.orbitron {
             font-family: 'Orbitron', monospace;
         }
         .hero-image img 
@@ -23,9 +35,9 @@
     width: 600px; 
     height: auto; animation: pulse 5s infinite;}
     @keyframes pulse {
-    0%   { filter: drop-shadow(0 0 5px #ffffff); }
-    50%  { filter: drop-shadow(0 0 20px #ffffff); }
-    100% { filter: drop-shadow(0 0 5px #ffffff); }
+    0%   { filter: drop-shadow(0 0 5px #727272); }
+    50%  { filter: drop-shadow(0 0 20px #757575); }
+    100% { filter: drop-shadow(0 0 5px #818181); }
     }
     .navim img 
     {width: 100px; 
@@ -43,6 +55,9 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        .absolut.mobil img
+        {width: 700px; 
+    height: auto;}
         .neon-glow {
             box-shadow: 0 0 20px rgba(255, 0, 64, 0.5), 0 0 40px rgba(255, 0, 64, 0.3);
         }
@@ -115,8 +130,8 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-sm border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-sm border-b border-white/10 transition-all duration-300" id="main-nav">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="orbitron text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white-400">
                     <span class="navim" data-scroll="fade-right">
@@ -126,11 +141,12 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="text-white hover:text-red-500 transition-colors">Home</a>
                     <a href="#team" class="text-white hover:text-red-500 transition-colors">Team</a>
+                    <a href="#documentaries" class="text-white hover:text-red-500 transition-colors">Documentaries</a>
                     <a href="#car" class="text-white hover:text-red-500 transition-colors">Car</a>
                     <a href="#roadmap" class="text-white hover:text-red-500 transition-colors">Roadmap</a>
                     <a href="#join" class="text-white hover:text-red-500 transition-colors">Join Us</a>
                 </div>
-                <button id="mobile-menu-btn" class="md:hidden text-white">
+<button id="mobile-menu-btn" class="md:hidden text-white">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
@@ -140,32 +156,40 @@
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="#home" class="block px-3 py-2 text-white hover:text-red-500">Home</a>
                 <a href="#team" class="block px-3 py-2 text-white hover:text-red-500">Team</a>
+                <a href="#documentaries" class="block px-3 py-2 text-white hover:text-red-500">Documentaries</a>
                 <a href="#car" class="block px-3 py-2 text-white hover:text-red-500">Car</a>
                 <a href="#roadmap" class="block px-3 py-2 text-white hover:text-red-500">Roadmap</a>
                 <a href="#join" class="block px-3 py-2 text-white hover:text-red-500">Join Us</a>
             </div>
-        </div>
+</div>
     </nav>
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="fixed inset-0 hero-gradient opacity-10"></div>
-        <div class="fixed inset-0 bg-black/30"></div>
-<!-- Animated racing lines -->
-        <div class="fixed inset-0">
+        <div class="absolute inset-0 hero-gradient opacity-10"></div>
+        <div class="absolute inset-0 bg-black/30"></div>
+        
+        <!-- Hero Image with Gradient Overlay -->
+        <div class="absolute inset-0">
+            <img src="https://i.imgur.com/vevufBA.jpeg" alt="M96 Motorsport Racing Team" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+        </div>
+        <!-- Animated racing lines -->
+        <div class="absolute inset-0">
             <div class="race-track absolute top-1/4 w-full"></div>
             <div class="race-track absolute top-1/2 w-full" style="animation-delay: 1s;"></div>
             <div class="race-track absolute top-3/4 w-full" style="animation-delay: 2s;"></div>
         </div>
-        <div class="relative z-20 text-center px-4">
-<h1 class="orbitron text-6xl md:text-8xl font-black mb-4">
+<div class="relative z-20 text-center px-4">
+<h1 class="orbitron text-6xl md:text-8xl font-black mb-4 fade-in">
                 <span class="hero-image" data-scroll="fade-right">
                 <img src="https://i.imgur.com/Z30zR6M.png">
                 </span>
             </h1>
-            <p class="text-xl md:text-1xl text-gray-100 mb-8 max-w-2xl mx-auto">
-                Building the Future of racing - Indonesia's Top Sim Racing Team 
+<p class="text-xl md:text-1xl text-gray-100 mb-8 max-w-2xl mx-auto fade-in" style="animation-delay: 0.5s;">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&display=swap" rel="stylesheet">
+                Indonesia's Top Sim Racing Team - Building the Future of racing. 
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <button class="btn-primary px-8 py-4 rounded-full text-white font-bold orbitron">
                     <i class="fas fa-play mr-2"></i>Introduction
                 </button>
@@ -259,61 +283,153 @@
                 </div>
             </div>
 </div>
-    </section>
+    <section id="documentaries" class="py-20 px-4 bg-black/30 relative z-10">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="orbitron text-4xl md:text-5xl font-bold text-center mb-4">
+      OUR <span class="text-red-500">DOCUMENTARIES</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+      Capturing the journey through our lens
+    </p>
+
+    <div class="max-w-4xl mx-auto">
+      <!-- wrapper (posisi relatif untuk tombol) -->
+      <div class="relative overflow-hidden rounded-lg">
+
+        <!-- ===== slider (elemen yg di-transform) ===== -->
+        <div id="documentaries-slider" class="flex transition-transform duration-500 ease-in-out w-full">
+          <!-- 10 slides -->
+          <!-- Slide 1 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/5qZLEJy.jpeg" class="w-full h-96 object-cover" alt="Slide 1">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/qvdH9dg.jpeg" class="w-full h-96 object-cover" alt="Slide 2">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/njIqZ7n.jpeg" class="w-full h-96 object-cover" alt="Slide 3">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/61g8DSz.jpeg" class="w-full h-96 object-cover" alt="Slide 4">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/0DBzW6x.jpeg" class="w-full h-96 object-cover" alt="Slide 5">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/Wi0UwKK.jpeg" class="w-full h-96 object-cover" alt="Slide 6">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 7 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/stUDZt7.jpeg" class="w-full h-96 object-cover" alt="Slide 7">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 8 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/xRRo0hz.jpeg" class="w-full h-96 object-cover" alt="Slide 8">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 9 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/oMxJLE1.jpeg" class="w-full h-96 object-cover" alt="Slide 9">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+
+          <!-- Slide 10 -->
+          <div class="w-full flex-shrink-0 relative">
+            <img src="https://i.imgur.com/dw7MQoN.jpeg" class="w-full h-96 object-cover" alt="Slide 10">
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+              <h3 class="text-xl font-bold text-white"></h3>
+              <p class="text-gray-300"></p>
+            </div>
+          </div>
+        </div>
+        <!-- ===== akhir #documentaries-slider (penting!) ===== -->
+
+        <!-- NAV BUTTONS (di luar slider, tetep di dalam wrapper relatif) -->
+        <button id="prev-doc"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-red-500 transition-colors z-20 pointer-events-auto">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button id="next-doc"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-3 rounded-full hover:bg-red-500 transition-colors z-20 pointer-events-auto">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- DOTS -->
+        <div id="doc-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
+          <!-- dots akan dikontrol oleh JS; bisa pre-render 10 tombol juga -->
+        </div>
+
+      </div> <!-- akhir wrapper .relative overflow-hidden -->
+    </div>
+  </div>
+</section>
 
     <!-- Car Specifications -->
-    <section id="car" class="py-20 px-4 bg-black/30 relative z-10">
+<section id="car" class="py-20 px-4 bg-black/30 relative z-10">
 <div class="max-w-7xl mx-auto">
             <h2 class="orbitron text-4xl md:text-5xl font-bold text-center mb-4">
-                THE <span class="text-red-500">MACHINE</span>
+                OUR <span class="text-red-500">SPONSORS</span>
             </h2>
             <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-                Our weapon of choice - Custom built for domination
+                We collaborated, partnered with:
             </p>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="car-spec rounded-lg p-8">
-                        <h3 class="text-2xl font-bold mb-6 text-red-500">mobil</h3>
-                        
-                        <div class="space-y-4">
-                            <div class="flex justify-between">
-                                <span class="text-gray-300">Engine:</span>
-                                <span class="text-white font-bold"></span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-300">Power:</span>
-                                <span class="text-white font-bold"></span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-300">Weight:</span>
-                                <span class="text-white font-bold"></span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-300">Top Speed:</span>
-                                <span class="text-white font-bold"></span>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8">
-                            <h4 class="text-lg font-bold mb-4 text-white-400">Key Features</h4>
-                            <ul class="space-y-2 text-gray-300">
-                                <li><i class="fas fa-check text-red-500 mr-2"></i>-</li>
-                                <li><i class="fas fa-check text-red-500 mr-2"></i>-</li>
-                                <li><i class="fas fa-check text-red-500 mr-2"></i>-</li>
-                                <li><i class="fas fa-check text-red-500 mr-2"></i>-</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
+         
                 <div>
                     <div class="relative">
                     <div class="w-full h-96 bg-gradient-to-br from-red-500/10 to-white-400/10 rounded-lg flex items-center justify-center">
                         <i class="fas fa-car text-6xl text-white/10"></i>
                     </div>
-                    <div class="absolute inset-0 flex items-center justify-center z-10">
-                        <p class="text-gray-300 text-lg">Foto mobil</p>
+                    <div class="absolute inset-0 flex items-center justify-center z-5">
+                        <p class="text-gray-300 text-lg"></p>
+                        <div class="absolut mobil">
+                        <img src="https://i.imgur.com/F45aZyO.png">
                     </div>
 </div>
                 </div>
@@ -502,13 +618,140 @@
                 }
             });
         });
-// Newsletter form
+        
+        // Navbar scroll effect - tetap transparan di atas, kembali ke background saat scroll balik
+        const nav = document.getElementById('main-nav');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop === 0) {
+                // Di paling atas - background transparan
+                nav.style.background = 'rgba(0, 0, 0, 0.3)';
+            } else if (scrollTop < lastScrollTop) {
+                // Scroll ke atas - kembali ke background solid
+                nav.style.background = 'rgba(0, 0, 0, 0.8)';
+            } else {
+                // Scroll ke bawah - background transparan
+                nav.style.background = 'rgba(0, 0, 0, 0.3)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        // Newsletter form
         document.querySelector('form').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Thank you for subscribing! We\'ll keep you updated on our journey.');
             e.target.reset();
         });
-    </script>
+
+        // Documentaries Slider
+        const documentariesSlider = document.getElementById('documentaries-slider');
+        const docDots = document.querySelectorAll('.doc-dot');
+        const prevDocBtn = document.getElementById('prev-doc');
+        const nextDocBtn = document.getElementById('next-doc');
+        let currentDocSlide = 0;
+        const totalDocSlides = 10;
+
+        // Initialize dots
+        updateDocDots();
+
+        // Next slide
+        nextDocBtn.addEventListener('click', () => {
+            currentDocSlide = (currentDocSlide + 1) % totalDocSlides;
+            updateDocSlider();
+        });
+
+        // Previous slide
+        prevDocBtn.addEventListener('click', () => {
+            currentDocSlide = (currentDocSlide - 1 + totalDocSlides) % totalDocSlides;
+            updateDocSlider();
+        });
+
+        // Dot navigation
+        docDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentDocSlide = index;
+                updateDocSlider();
+        });
+
+        function updateDocSlider() {
+            documentariesSlider.style.transform = `translateX(-${currentDocSlide * 100}%)`;
+            updateDocDots();
+        }
+
+        function updateDocDots() {
+            docDots.forEach((dot, index) => {
+                if (index === currentDocSlide) {
+                    dot.classList.remove('bg-white/50');
+                    dot.classList.add('bg-white');
+                } else {
+                    dot.classList.remove('bg-white');
+                    dot.classList.add('bg-white/50');
+                }
+            });
+        }
+
+        // Auto slide documentaries
+        setInterval(() => {
+            currentDocSlide = (currentDocSlide + 1) % totalDocSlides;
+            updateDocSlider();
+        }, 5000);
+</script>
 <script src=""></script>
 </body>
 </html>
+<script>
+  const slider = document.getElementById("documentaries-slider");
+  const nextBtn = document.getElementById("next-doc");
+  const prevBtn = document.getElementById("prev-doc");
+  const dotsContainer = document.getElementById("doc-dots");
+
+  let index = 0;
+  const totalSlides = slider.children.length;
+
+  // buat dots dinamis sesuai jumlah slide
+  for (let i = 0; i < totalSlides; i++) {
+    const btn = document.createElement("button");
+    btn.className = "doc-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white transition-colors";
+    btn.setAttribute("data-index", i);
+    dotsContainer.appendChild(btn);
+  }
+
+  const dots = document.querySelectorAll(".doc-dot");
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+    // update active dot
+    dots.forEach((d, i) => {
+      if (i === index) {
+        d.classList.remove("bg-white/50");
+        d.classList.add("bg-white");
+      } else {
+        d.classList.remove("bg-white");
+        d.classList.add("bg-white/50");
+      }
+    });
+  }
+
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % totalSlides;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", (e) => {
+      index = Number(e.currentTarget.getAttribute("data-index"));
+      updateSlider();
+    });
+  });
+
+  // init
+  updateSlider();
+</script>
